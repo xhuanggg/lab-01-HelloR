@@ -64,15 +64,19 @@ Similar to the last question,  there is no visually observable linear patterns o
 
 ### Exercise 4
 
-Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
+```{r plot-circle}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
-```{r}
-
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-```{r}
-
+```{r cor-cirlce}
+dino_data %>%
+  summarize(r = cor(x, y))
 ```
+Similar to the last question,  there is no visually observable linear patterns of $y$ and $x$. There is a weak correlation between $y$ and $x$, $r = -.068$.
 
 ### Exercise 5
 
