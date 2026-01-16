@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Thomas Huang"
+date: "2026-01-16"
 output: 
   html_document: 
     fig_height: 4
@@ -20,7 +20,10 @@ data("datasaurus_dozen")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r}
+glimpse(datasaurus_dozen)
+```
+There are 1,846 rows and 3 columns.
 
 ### Exercise 2
 
