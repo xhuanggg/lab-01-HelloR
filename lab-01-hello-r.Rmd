@@ -4,8 +4,7 @@ author: "Thomas Huang"
 date: "2026-01-16"
 output: 
   html_document: 
-    fig_height: 4
-    fig_width: 9
+    highlight: zenburn
 ---
 
 ## Load packages and data
@@ -80,9 +79,19 @@ Similar to the last question,  there is no visually observable linear patterns o
 
 ### Exercise 5
 
-This is your final exercise! Add code and narrative as needed. Be creative and show off what you’ve learned so far.
-Add code and narrative as needed.
+```{r plot-all}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) +
+  geom_point() +
+  facet_wrap(~dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
 
-To add additional R chunks, you can either type the backticks, curly braces, and the letter `r`, or use the "Insert Chunk" button above (the green C+ icon). Have fun!
+```{r cor-all}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+All 13 datasets show cool visual patterns of $y$ and $x$ but without clear linear patterns. All 13 datasets show weak correlations between $y$ and $x$, with $r$ ranging from $-.060$ to $-.069$.
 
 
